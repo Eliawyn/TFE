@@ -56,6 +56,7 @@ TractionPlot('Line',5)    % Exemple
 - '*CreationVariableExcel*' permet d'importer les données des fichiers excel dans VarTraction.mat
 - '*AllLinePlot*' et '*AllCornerPlot*' permet d'afficher tous les graphes des données
 - '*LineYoungPlot*' et '*CornerYoungPlot*' permet d'afficher les différents modules de Young
+- '*YoungSim*' permet de simuler et trouver théoriquement le module de Young sur les échantillons de lignes verticales. Celui-ci va aussi comparer avec les modules trouvés pratiquement
 
 ### Tests d'élasticité
 Non terminé.
