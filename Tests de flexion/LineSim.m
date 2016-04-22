@@ -31,8 +31,21 @@ I_PET = (W_PET*H_PET^3)/12;
 mg = 100;       %mg
 F = mg*mgToN;   %N
 
-%% Calcul
+%% Calcul 
 % Traction.Line(i).YoungM
 for i = 1:10
-    Line.Ver(i).Fleche = (1/48)*((F*L_PET^3)/(Traction.Line(i).YoungM*I_PET));
+    Line.Ver(i).Fleche = (1/48)*((F*L_PET^3)/(Traction.Line(i).YoungSim*I_PET));
 end
+
+%% Comparaison des pentes en µm/mg
+figure('name','Comparaison de la flexibilité des échantillons','NumberTitle','off')
+
+display = [Line.Ver.Pente ; Line.Ver.Fleche];
+display(2,:) = display(2,:)*10^4;
+bar(display','hist')
+
+xlim([0 11]);
+title('Comparaison de la flexibilité des échantillons')
+xlabel('N° échantillon');
+ylabel('Pente (µm/mg)');
+legend('Pente des tests pratiques', 'Pente calculée théoriquement','Location','northeast')
