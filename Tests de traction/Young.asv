@@ -1,0 +1,13 @@
+%% Calcul du modèle de Young
+
+L           = 0.03;
+Width       = 0.01;
+Thickness   = 0.05*10^(-3);
+Surface     = Width*Thickness;
+
+Fe          = 50;
+LFe         = 1.35;
+Re          = Fe/Surface; 
+
+
+

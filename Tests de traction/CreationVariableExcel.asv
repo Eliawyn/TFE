@@ -1,0 +1,51 @@
+%% Script d'enregistrement des variables de fichiers excels
+clc
+clearvars -except Line Papier Res Via LineTestElastic
+close all
+
+disp('Création des variables via les fichiers Excel ...')
+disp(' ')
+
+%% Variables pour les corners
+
+for i=1:10
+    s = sprintf('Importation de Corner_%d',i);
+    disp(s)
+    eval(sprintf('[Traction.Corner(%d).time,Traction.Corner(%d).load] = importexcel(''Corner_%d'');',i,i,i));
+    eval(sprintf('time = Traction.Corner(%d).time;',i));
+    eval(sprintf('theload = Traction.Corner(%d).load;',i));
+    
+    %Graphe des droites carrés sur les 20 premières secondes
+    %L'index des valeurs inférieur à 10s
+    mintime = find(time<=20);
+    %Calcul de la pente moyenne
+    %Ici X\Y car matrice colonne
+    Traction.Corner(i).Pente = time(mintime)\theload(mintime);
+    %Données de la droite moyenne
+    Traction.Corner(i).Px = time(mintime);
+    Traction.Corner(i).Px = Traction.Corner(i).Pente*Traction.Corner(i).Px;
+end
+disp(' ')
+
+%% Variables pour les lignes
+% ATTENTION, l'index ici représente le n° de l'échantillon
+% et NON le nombre de lignes présentes sur l'échantillon.
+for i=1:10
+    s = sprintf('Importation de line_%d',i);
+    disp(s)
+    eval(sprintf('[Ltime_%d,Lload_%d] = importexcel(''line_%d'');',i,i,i));
+    eval(sprintf('time = Ltime_%d;',i));
+    eval(sprintf('theload = Lload_%d;',i));
+    
+    %Graphe des droites carrés sur les 10 premières secondes
+    %L'index des valeurs inférieur à 10s
+    mintime = find(time<=10); 
+    %Calcul de la pente moyenne
+    LinePente(i).Pente = time(mintime)\theload(mintime);
+    %Données de la droite moyenne
+    LinePente(i).X   = time(mintime); 
+    LinePente(i).Y   = LinePente(i).X*LinePente(i).Pente;
+end
+
+clear i s time theload mintime Polynome
+save('VarTraction');
