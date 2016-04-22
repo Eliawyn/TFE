@@ -20,7 +20,7 @@ V_PET   = L_PET*W_PET*H_PET; %mm^3
 V_Cu    = L_Cu*W_Cu*H_Cu;    %mm^3
 
 Part_PET= V_PET./(V_PET+V_Cu);% en pourcent
-Part_Cu = 1-Part_PET;        % en pourcent
+Part_Cu = 1-Part_PET;         % en pourcent
 
 %Module de Young
 E = E_PET*Part_PET + E_Cu*Part_Cu;

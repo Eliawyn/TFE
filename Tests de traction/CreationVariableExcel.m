@@ -25,10 +25,10 @@ for i=1:10
     Traction.Corner(i).Px = time(mintime);
     Traction.Corner(i).Py = Traction.Corner(i).Px * Traction.Corner(i).Pente;
     
-    %Calcul du module de Young, point à 10 secondes
-    point = find(Traction.Corner(i).time <= 10);
-    point = point(end);
-    Traction.Corner(i).YoungM = Young(Traction.Corner(i).ext(point),Traction.Corner(i).load(point));
+%     %Calcul du module de Young, point à 10 secondes
+%     point = find(Traction.Corner(i).time <= 10);
+%     point = point(end);
+%     Traction.Corner(i).YoungM = Young(Traction.Corner(i).ext(point),Traction.Corner(i).load(point),i);
 end
 disp(' ')
 
