@@ -26,7 +26,8 @@ end
 - '*Variables*' transformation des **VarBrut** en **VarGood**
 - '*plotting*' permet de mettre en graphe toutes les données
 - '*main*' permet de faire les deux à la suite
-> Les graphes présente les données, le moyennage de celles-ci et le résultat. Les autres fichiers *.m* sont à titre personnel d'information et ne sont pas utiles ici.
+- '*LineSim*' permet de faire une simulation des flèches de chaque échantillon
+> Les graphes présentent les données, le moyennage de celles-ci et le résultat. Les autres fichiers *.m* sont à titre personnel d'information et ne sont pas utiles ici.
 
 ### Tests de traction
 ##### Variables
