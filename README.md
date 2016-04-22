@@ -12,7 +12,7 @@
 
 Différentes manières d'appeler une variable :
 ```matlab
-Line.Ver.X      % Retourne la colonne X dans Line.Ver
+Line.Ver(1)      % Retourne les informations de Line.Ver
 ```
 ```matlab
 for i = 1:10
