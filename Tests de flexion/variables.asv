@@ -24,11 +24,6 @@ for i=1:10
     Line.Hor(i).Y           = eval(sprintf('Yh%d', i*2));
     Line.Hor(i).Taille      = length(Line.Hor(i).X);
     Line.Hor(i).Commentaire = sprintf('%d lignes horizontales', i*2);
-    %Calcul de la pente moyenne des données
-    Line.Hor(i).Pente = Line.Hor(i).Y/Line.Hor(i).X;
-    %Données de la droite moyenne
-    Line.Hor(i).Px = Line.Hor(i).X;
-    Line.Hor(i).Py = Line.Hor(i).Pente*Line.Hor(i).Px;
     
 %Résistances horizontales
     Res.Hor(i).X            = eval(sprintf('Xrh%d', i));
@@ -38,13 +33,6 @@ for i=1:10
         %Décalage des valeurs à zéro
         Shift               = Res.Hor(i).Y(1);
         Res.Hor(i).Y        = Res.Hor(i).Y - Shift;
-    %Calcul de la pente moyenne des données
-    Res.Hor(i).Pente = Res.Hor(i).Y/Res.Hor(i).X;
-    %Données de la droite moyenne
-    Res.Hor(i).Px = Res.Hor(i).X;
-    Res.Hor(i).Py = Res.Hor(i).Pente*Res.Hor(i).Px;
-   
-   
     
 %Résistances verticales
     Res.Ver(i).X            = eval(sprintf('Xrv%d', i));
@@ -54,13 +42,6 @@ for i=1:10
         %Décalage des valeurs à zéro
         Shift               = Res.Ver(i).Y(1);
         Res.Ver(i).Y        = Res.Ver(i).Y - Shift;
-    %Calcul de la pente moyenne des données
-    Res.Ver(i).Pente = Res.Ver(i).Y/Res.Ver(i).X;
-    %Données de la droite moyenne
-    Res.Ver(i).Px = Res.Ver(i).X;
-    Res.Ver(i).Py = Res.Ver(i).Pente*Res.Ver(i).Px;
-   
-   
     
 %Vias
     if i<10
@@ -71,15 +52,7 @@ for i=1:10
             %Décalage des valeurs à zéro
             Shift           = Via(i).Y(1);
             Via(i).Y        = Via(i).Y - Shift;
-        %Calcul de la pente moyenne des données
-        Via(i).Pente = Via(i).Y/Via(i).X;
-        %Données de la droite moyenne
-        Via(i).Px = Via(i).X;
-        Via(i).Py = Via(i).Pente*Via(i).Px;
     end
-    
-   
-   
     
 %Papier
 %     Papier.X                = XPapier;

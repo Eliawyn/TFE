@@ -17,12 +17,6 @@ for i = 1:(length(Line.Ver))
        plot(Line.Ver(i).X ,Line.Ver(i).Y, '-o' , 'DisplayName', [num2str(i-1) ' lignes'], 'LineWidth', 1.5);
    end
    hold on
-    
-   %Calcul de la pente moyenne des données
-   Line.Ver(i).Pente = Line.Ver(i).Y/Line.Ver(i).X; % Ici Y/X car matrice ligne
-   %Données de la droite moyenne
-   Line.Ver(i).Px = Line.Ver(i).X;
-   Line.Ver(i).Py = Line.Ver(i).Pente*Line.Ver(i).Px;
    
    %Graphe des droites moyennes
    subplot(2,2,2)
@@ -75,12 +69,6 @@ for i = 1:(length(Line.Hor))
    plot(Line.Hor(i).X, Line.Hor(i).Y, '-o', 'DisplayName', [num2str(i*2) ' lignes'], 'LineWidth', 1.5);
    hold on
    
-   %Calcul de la pente moyenne des données
-   Line.Hor(i).Pente = Line.Hor(i).Y/Line.Hor(i).X;
-   %Données de la droite moyenne
-   Line.Hor(i).Px = Line.Hor(i).X;
-   Line.Hor(i).Py = Line.Hor(i).Pente*Line.Hor(i).Px;
-   
    %Graphe des droites moyennes
    subplot(2,2,2)
    plot(Line.Hor(i).Px,Line.Hor(i).Py, 'DisplayName', [num2str(i*2) ' lignes'], 'LineWidth', 1.5)
@@ -121,12 +109,6 @@ for i = 1:(length(Res.Hor))
    subplot(2,2,1);
    plot(Res.Hor(i).X, Res.Hor(i).Y, '-o', 'DisplayName', [num2str(i) ' résistances'], 'LineWidth', 1.5);
    hold on
-   
-   %Calcul de la pente moyenne des données
-   Res.Hor(i).Pente = Res.Hor(i).Y/Res.Hor(i).X;
-   %Données de la droite moyenne
-   Res.Hor(i).Px = Res.Hor(i).X;
-   Res.Hor(i).Py = Res.Hor(i).Pente*Res.Hor(i).Px;
    
    %Graphe des droites moyennes
    subplot(2,2,2)
@@ -169,12 +151,6 @@ for i = 1:(length(Res.Ver))
    plot(Res.Ver(i).X, Res.Ver(i).Y, '-o', 'DisplayName', [num2str(i) ' résistances'], 'LineWidth', 1.5);
    hold on
    
-   %Calcul de la pente moyenne des données
-   Res.Ver(i).Pente = Res.Ver(i).Y/Res.Ver(i).X;
-   %Données de la droite moyenne
-   Res.Ver(i).Px = Res.Ver(i).X;
-   Res.Ver(i).Py = Res.Ver(i).Pente*Res.Ver(i).Px;
-   
    %Graphe des droites moyennes
    subplot(2,2,2)
    plot(Res.Ver(i).Px,Res.Ver(i).Py, 'DisplayName', [num2str(i) ' résistances'], 'LineWidth', 1.5)
@@ -215,12 +191,6 @@ for i = 1:(length(Via))
    subplot(2,2,1);
    plot(Via(i).X, Via(i).Y, '-o', 'DisplayName', [num2str(i) ' vias'], 'LineWidth', 1.5);
    hold on
-   
-   %Calcul de la pente moyenne des données
-   Via(i).Pente = Via(i).Y/Via(i).X;
-   %Données de la droite moyenne
-   Via(i).Px = Via(i).X;
-   Via(i).Py = Via(i).Pente*Via(i).Px;
    
    %Graphe des droites moyennes
    subplot(2,2,2)
