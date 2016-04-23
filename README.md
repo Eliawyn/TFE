@@ -1,4 +1,4 @@
-# Travail de fin d'étude
+# Travail de fin d'études
 > Maxime Bosquet
 
 - Au préalable, faire un *click droit* sur le dossier **TFE** dans MATLAB et *Add to path - Selected folder and subfolders*
@@ -55,12 +55,17 @@ TractionPlot('Line',5)    % Exemple
 ```matlab
 [E] = Young(0.3645, 50.1562)    % Exemple
 ```
+- **shadeplot** permet de créer une zone de couleur dans un plot
+```matlab
+[A,B,C] = shadedplot([0 11], [9 9], [13 13], [1 0.7 0.7], 'r');
+```
 
 ##### Scripts
 - **CreationVariableExcel** permet d'importer les données des fichiers excel dans VarTraction.mat
 - **AllLinePlot** et **AllCornerPlot** permet d'afficher tous les graphes des données
 - **LineYoungPlot** et **CornerYoungPlot** permet d'afficher les différents modules de Young
 - **YoungSim** permet de simuler et trouver théoriquement le module de Young sur les échantillons de lignes verticales. Celui-ci va aussi comparer avec les modules trouvés pratiquement
+- **TearStrength** permet de calculer et afficher les résistances aux fissures des différents échantillons en coin, et comparer les différents systèmes de sécurité de circuits
 
 ### Tests d'élasticité
 Non terminé.
