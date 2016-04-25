@@ -22,8 +22,9 @@ L_Cu    = 0.04;       %m
 W_Cu    = [0 1 2 3 4 5 6 7 9 3.6];%mm
 W_Cu    = W_Cu./1000; %m
 %3.6 est pour le ground hachuré
-H_Cu    = ones(1,10)*0.000035;   %m
-H_Cu(1) = 0;
+% H_Cu    = ones(1,10)*0.000035;   %m
+% H_Cu(1) = 0;
+H_Cu
 
 %dimensions
 W = W_Cu + W_PET;
@@ -41,7 +42,6 @@ for i = 1:10
     Line.Ver(i).Fleche = (1/48)*((F*power(L_PET,3))/(Traction.Line(i).YoungM*I(i)));
 end
 
-
 %% Comparaison des pentes en µm/mg
 figure('name','Comparaison de la flexibilité des échantillons','NumberTitle','off')
 
@@ -56,4 +56,4 @@ xlabel('N° échantillon');
 ylabel('Pente (µm/mg)');
 legend('Pente des tests pratiques', 'Pente calculée théoriquement','Location','northeast')
 
-clearvars -except Line Papier Res Via Traction
+clearvars -except Line Papier Res Via Traction F I W H
