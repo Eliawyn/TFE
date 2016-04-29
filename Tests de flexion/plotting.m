@@ -60,6 +60,71 @@ ylabel('Pente (µm/mg)');
 xlabel('Echantillons');
 xlim([-0.5 9.5]);
 
+%% Lignes verticales polyimide
+figure('name','Lignes verticales polyimide','NumberTitle','off')
+
+for i = 1:(length(Line.PI))
+   %Graphe des valeurs
+   subplot(2,2,1);
+   if i==7
+       plot(Line.PI(i).X, Line.PI(i).Y, '--o', 'DisplayName', 'Masse pleine'          , 'LineWidth', 1.5);
+   elseif i==8
+       plot(Line.PI(i).X, Line.PI(i).Y, '--o', 'DisplayName', 'Masse hachurée'        , 'LineWidth', 1.5);
+   else
+       plot(Line.PI(i).X ,Line.PI(i).Y, '-o' , 'DisplayName', [num2str(i) ' lignes'], 'LineWidth', 1.5);
+   end
+   hold on
+   
+   %Graphe des droites moyennes
+   subplot(2,2,2)
+   if i==7
+       plot(Line.PI(i).Px,Line.PI(i).Py, '--', 'DisplayName', 'Masse pleine'  , 'LineWidth', 1.5)
+   elseif i==8
+       plot(Line.PI(i).Px,Line.PI(i).Py, '--', 'DisplayName', 'Masse hachurée'  , 'LineWidth', 1.5)
+   else
+       plot(Line.PI(i).Px,Line.PI(i).Py, 'DisplayName', [num2str(i) ' lignes'], 'LineWidth', 1.5)
+   end
+   hold on
+
+   % Graphe des pentes des droites
+   subplot(2,2,3)
+   if i==7
+       stem(i,Line.PI(i).Pente, 'DisplayName', 'Masse pleine', 'LineWidth', 1.5, 'LineStyle', '--')
+   elseif i==8
+       stem(i,Line.PI(i).Pente, 'DisplayName', 'Masse hachurée', 'LineWidth', 1.5, 'LineStyle', '--')
+   else
+       stem(i,Line.PI(i).Pente, 'DisplayName', [num2str(i) ' lignes'], 'LineWidth', 1.5)
+   end
+   if i>6
+       
+   else
+       
+   end
+   hold on
+  
+end
+
+subplot(2,2,1);
+title('Déformation échantillons : Lignes verticales')
+xlabel('Force (mg)')
+ylabel('Flèche (µm)')
+legend('Location','southeast')
+legend(gca,'show')
+
+subplot(2,2,2);
+title('Déformation échantillons : Lignes verticales moyennes')
+xlabel('Force (mg)')
+ylabel('Flèche (µm)')
+legend('Location','southeast')
+legend(gca,'show')
+
+subplot(2,2,3)
+title('Flexibilité : Pentes des droites de moindres carrés')
+ylabel('Pente (µm/mg)');
+xlabel('Echantillons');
+legend('Location','northeast')
+xlim([0.5 8.5]);
+
 %% Lignes horizontales
 figure('name','Lignes horizontales','NumberTitle','off')
 
