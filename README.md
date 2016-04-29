@@ -29,7 +29,9 @@ end
 - **plotting** permet de mettre en graphe toutes les données
 - **main** permet de faire les deux à la suite
 - **LineSim** permet de faire une simulation des flèches de chaque échantillon
-- **YoungComp** est inutile ici, juste pour information personnelle.
+- **CoteRes** permet de comparer l'effet du sens du pliage en interne ou externe
+- **PETvsIP** permet de comparer la flexibilité entre le polyester et le polyimide
+- **YoungComp** est inutile ici, juste pour information personnelle
 > Les graphes présentent les données, le moyennage de celles-ci et le résultat. Les autres fichiers *.m* sont à titre personnel d'information et ne sont pas utiles ici.
 
 ## Tests de traction
