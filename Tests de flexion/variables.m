@@ -1,6 +1,6 @@
 %% Variables
 clc
-clearvars -except Line Papier Res Via Traction
+clearvars -except Line Papier Res Via Traction Cote
 
 %% Chargement des variables
 load('VarBrut.mat')
@@ -121,12 +121,14 @@ Line.PI(5).X    = [0 50 100 110 220 391 501];
 Line.PI(5).Y    = [0 386 725 773 1338 2333 2880];
 Line.PI(6).X    = [0 50 100 110 220];
 Line.PI(6).Y    = [0 250 584 684 1280];
-Line.PI(7).X    = [0 50 100 110 220 391 572 782];
-Line.PI(7).Y    = [0 80 156 162 255 379 475 519];
-Line.PI(8).X    = [0 50 100 110 220 391 782 854];
-Line.PI(8).Y    = [0 173 306 307 489 663 790 969];
+Line.PI(7).X    = [0 50 100 110 220];
+Line.PI(7).Y    = [0 196 398 447 985];
+Line.PI(8).X    = [0 50 100 110 220 391 572 782];
+Line.PI(8).Y    = [0 80 156 162 255 379 475 519];
+Line.PI(9).X    = [0 50 100 110 220 391 782 854];
+Line.PI(9).Y    = [0 173 306 307 489 663 790 969];
 
-for i=1:8
+for i=1:9
     Line.PI(i).Commentaire = sprintf('%d lignes verticales', i);
     %Calcul de la pente moyenne des données
     Line.PI(i).Pente = Line.PI(i).Y/Line.PI(i).X; % Ici Y/X car matrice ligne
@@ -203,7 +205,7 @@ end
 
 
 %% Nettoyage
-clearvars -except Line Papier Res Via LineTestElastic Traction
+clearvars -except Line Papier Res Via LineTestElastic Traction Cote
 
 %% Sauvegarde
 save('VarGood.mat')

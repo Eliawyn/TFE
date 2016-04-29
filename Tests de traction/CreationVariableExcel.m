@@ -1,6 +1,6 @@
 %% Script d'enregistrement des variables de fichiers excels
 clc
-clearvars -except Line Papier Res Via LineTestElastic
+clearvars -except Line Papier Res Via LineTestElastic Cote
 close all
 
 disp('Création des variables via les fichiers Excel ...')

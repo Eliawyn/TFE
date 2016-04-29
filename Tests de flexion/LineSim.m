@@ -56,4 +56,4 @@ xlabel('N° échantillon');
 ylabel('Pente (µm/mg)');
 legend('Pente des tests pratiques', 'Pente calculée théoriquement','Location','northeast')
 
-clearvars -except Line Papier Res Via Traction
+clearvars -except Line Papier Res Via Traction Cote
