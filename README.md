@@ -1,5 +1,5 @@
 # Travail de fin d'études
-> Maxime Bosquet
+> Maxime Bosquet - 17 mai 2016
 
 - Au préalable, faire un *click droit* sur le dossier **TFE** dans MATLAB et *Add to path - Selected folder and subfolders*
 - Concentration des calculs et outils utilisés pour le TFE
