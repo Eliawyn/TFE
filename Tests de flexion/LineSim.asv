@@ -10,7 +10,7 @@
 %Transformation milligramme en Newton
 mgToN = 0.00000981;
 
-%Dimensions E=Module de Young, L=longueur, W=largeur, H=épaisseur
+%Dimensions E=Epaisseur, L=longueur, W=largeur,
 %Polyester
 E_PET   = 4*10^9;   %Pa
 L_PET   = 0.04;     %m
@@ -32,7 +32,7 @@ W_Epy   = W_PET;
 H_Epy   = 0.00002;
 
 %% Calcul centre de gravité
-%http://bendingmomentdiagram.com/fr/tutorials/beam-section-centroid/
+%H_mid = (H_PET+H_Cu+H_Epy)/3;
 A1 = W_PET*H_PET;
 y1 = H_PET/2;
 A2 = W_Epy.*H_Epy;
@@ -43,7 +43,6 @@ y3 = H_PET + H_Epy + H_Cu/2;
 H_Centre = (A1*y1 + A2*y2 + A3*y3)./(A1 + A2 + A3);
 
 %% Calcul du moment d'inertie
-%http://bendingmomentdiagram.com/fr/tutorials/calculating-beam-section-moment-of-inertia/
 %Calcul de la partie PET
 I1 = (W_PET.*power(H_PET,3))./12;
 d1 = abs(H_PET/2 - H_Centre);
@@ -57,11 +56,12 @@ d3 = abs(H_PET + H_Epy + H_Cu/2 - H_Centre);
 %Mise en commun des moments d'inerties
 I  = (I1 + A1.*power(d1,2)) + (I2 + A2.*power(d2,2)) + (I3 + A3.*power(d3,2));  
 
-%% Calcul théorique de la flèche
 % Force appliquée
 mg = 100;       %mg
 F = mg*mgToN;   %N
 
+%% Calcul 
+% Traction.Line(i).YoungM
 for i = 1:10
     Line.Ver(i).Fleche = (1/48)*((F*power(L_PET,3))/(Traction.Line(i).YoungSim*I(i)));
 end
@@ -81,4 +81,4 @@ xlabel('N° échantillon');
 ylabel('Pente (µm/mg)');
 legend('Pente des tests pratiques', 'Pente calculée théoriquement','Location','northeast')
 
-clearvars -except Line Papier Res Via Traction Cote
+%clearvars -except Line Papier Res Via Traction Cote I
