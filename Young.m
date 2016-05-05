@@ -1,4 +1,4 @@
-function [ E ] = Young( extension, Elastic_load)
+function [ E ] = Young( extension, Elastic_load, ech)
 %% Calcul du modèle de Young
 %http://solar.energy.cours.free.fr/doc%20cours%20ing/science%20des%20materiaux/RAPPORT-TRACTION.pdf
 
@@ -9,13 +9,30 @@ function [ E ] = Young( extension, Elastic_load)
 %
 %Résultat : donne le module de Young
 
-L           = 0.03;
-% W_PET       = 0.01;
-%H_PET       = 0.05*10^(-3);
-% W_Cu        = [0 1 2 3 4 5 6 7 9 3.6];
-% W_Cu        = W_Cu*10^(-3);
-% H_Cu        = 0.035*10^(-3);
-% Surface     = W_PET*H_PET + W_Cu(num)*H_Cu;
+% %% Calcul des surfaces
+% %Polyester
+% W_PET   = 0.01;     %m
+% H_PET   = 0.00005;  %m
+% 
+% %Cuivre
+% W_Cu    = [0 1 2 3 4 5 6 7 9 3.6];%mm
+% W_Cu    = W_Cu./1000; %m
+% %3.6 est pour le ground hachuré
+% H_Cu    = 0.000035;
+% 
+% %resine adhésif
+% W_Epy   = W_PET;
+% H_Epy   = 0.00002;
+% 
+% L       = 0.05;
+% 
+% A1 = W_PET*H_PET;
+% A2 = W_Epy*H_Epy;
+% A3 = W_Cu.*H_Cu;
+% 
+% Surface = (A1+A2+A3);
+%On ne prend pas ceux là, mais les données introduite pour les tests.
+
 width = 0.01;
 height= 0.05*10^(-3);
 Surface = width*height;
@@ -29,5 +46,6 @@ YElastic    = Elastic_load;         %(N)
 %      S     LElastic
 
 E = YElastic/(Surface*LElastic);
+% E = YElastic/(Surface(ech)*LElastic);
 
 end

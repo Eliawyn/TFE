@@ -35,7 +35,7 @@ H_Epy   = 0.00002;
 %http://bendingmomentdiagram.com/fr/tutorials/beam-section-centroid/
 A1 = W_PET*H_PET;
 y1 = H_PET/2;
-A2 = W_Epy.*H_Epy;
+A2 = W_Epy*H_Epy;
 y2 = H_PET + H_Epy/2;
 A3 = W_Cu.*H_Cu;
 y3 = H_PET + H_Epy + H_Cu/2;

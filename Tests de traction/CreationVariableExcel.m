@@ -41,6 +41,7 @@ for i=1:10
     eval(sprintf('[Traction.Line(%d).time, Traction.Line(%d).load, Traction.Line(%d).ext] = importexcel(''line_%d'');',i,i,i,i));
     eval(sprintf('time = Traction.Line(%d).time;',i));
     eval(sprintf('theload = Traction.Line(%d).load;',i));
+    eval(sprintf('ext = Traction.Line(%d).ext;',i));
     
     %Graphe des droites carrés sur les 10 premières secondes
     %L'index des valeurs inférieur à 10s
@@ -52,9 +53,9 @@ for i=1:10
     Traction.Line(i).Py   = Traction.Line(i).Px * Traction.Line(i).Pente;
     
     %Calcul du module de Young, point à 10 seconde
-    point = find(Traction.Line(i).time <= 10);
+    point = find(Traction.Line(i).time <= 4);
     point = point(end);
-    Traction.Line(i).YoungM = Young(Traction.Line(i).ext(point),Traction.Line(i).load(point));
+    Traction.Line(i).YoungM = Young(Traction.Line(i).ext(point),Traction.Line(i).load(point),i);
 end
 
 clear i s time theload mintime point
