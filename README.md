@@ -5,35 +5,6 @@
 - Concentration des calculs et outils utilisés pour le TFE
 - Tous les fichiers MATLAB sont présents
 
-## Tests de flexion
-#### Variables
-- **VarBrut.mat** reprend les données basiques récupérées du test
-- **VarGood.mat** reprend les données éditées pour une meilleure compréhension
-
-> Chaque structure est représentée par un poids (X), une flèche (Y) et un commentaire. 
-
-Différentes manières d'appeler une variable :
-```matlab
-Line.Ver(1)      % Retourne les informations de Line.Ver
-```
-```matlab
-for i = 1:10
-    figure
-    plot(Res.Ver(i).X, Res.Ver(i).Y)
-    % Graphe de tous les échantillons de résistances verticales
-end
-```
-
-#### Scripts
-- **Variables** transformation des **VarBrut** en **VarGood**
-- **plotting** permet de mettre en graphe toutes les données
-- **main** permet de faire les deux à la suite
-- **LineSim** permet de faire une simulation des flèches de chaque échantillon
-- **CoteRes** permet de comparer l'effet du sens du pliage en interne ou externe
-- **PETvsIP** permet de comparer la flexibilité entre le polyester et le polyimide
-- **YoungComp** est inutile ici, juste pour information personnelle
-> Les graphes présentent les données, le moyennage de celles-ci et le résultat. Les autres fichiers *.m* sont à titre personnel d'information et ne sont pas utiles ici.
-
 ## Tests de traction
 #### Variables
 - **VarTraction.mat** comprend toutes les données concernant les tests de traction
@@ -68,6 +39,35 @@ TractionPlot('Line',5)    % Exemple
 - **LineYoungPlot** et **CornerYoungPlot** permet d'afficher les différents modules de Young
 - **YoungSim** permet de simuler et trouver théoriquement le module de Young sur les échantillons de lignes verticales. Celui-ci va aussi comparer avec les modules trouvés pratiquement
 - **TearStrength** permet de calculer et afficher les résistances aux fissures des différents échantillons en coin, et comparer les différents systèmes de sécurité de circuits
+
+## Tests de flexion
+#### Variables
+- **VarBrut.mat** reprend les données basiques récupérées du test
+- **VarGood.mat** reprend les données éditées pour une meilleure compréhension
+
+> Chaque structure est représentée par un poids (X), une flèche (Y) et un commentaire. 
+
+Différentes manières d'appeler une variable :
+```matlab
+Line.Ver(1)      % Retourne les informations de Line.Ver
+```
+```matlab
+for i = 1:10
+    figure
+    plot(Res.Ver(i).X, Res.Ver(i).Y)
+    % Graphe de tous les échantillons de résistances verticales
+end
+```
+
+#### Scripts
+- **Variables** transformation des **VarBrut** en **VarGood**
+- **plotting** permet de mettre en graphe toutes les données
+- **main** permet de faire les deux à la suite
+- **LineSim** permet de faire une simulation des flèches de chaque échantillon
+- **CoteRes** permet de comparer l'effet du sens du pliage en interne ou externe
+- **PETvsIP** permet de comparer la flexibilité entre le polyester et le polyimide
+- **YoungComp** est inutile ici, juste pour information personnelle
+> Les graphes présentent les données, le moyennage de celles-ci et le résultat. Les autres fichiers *.m* sont à titre personnel d'information et ne sont pas utiles ici.
 
 ## Tests d'élasticité
 Non terminé.
