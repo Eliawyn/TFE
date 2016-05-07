@@ -54,3 +54,4 @@ title('Comparaison Module de Young -- Polyester')
 xlabel('N° échantillon');
 ylabel('Module de Young (GPa)');
 legend('Module de Young pratique', 'Module de Young théorique','Location','northwest')
+grid on

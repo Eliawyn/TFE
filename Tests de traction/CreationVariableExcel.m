@@ -53,7 +53,11 @@ for i=1:10
     Traction.Line(i).Py   = Traction.Line(i).Px * Traction.Line(i).Pente;
     
     %Calcul du module de Young, point à 10 seconde
-    point = find(Traction.Line(i).time <= 4);
+    if i==1 
+        point = find(Traction.Line(i).time <= 1.5);
+    else
+        point = find(Traction.Line(i).time <= 4);
+    end
     point = point(end);
     Traction.Line(i).YoungM = Young(Traction.Line(i).ext(point),Traction.Line(i).load(point));
 end
