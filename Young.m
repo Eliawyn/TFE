@@ -1,4 +1,4 @@
-function [ E ] = Young( extension, Elastic_load, ech)
+function [ E ] = Young( extension, Elastic_load)
 %% Calcul du modèle de Young
 %http://solar.energy.cours.free.fr/doc%20cours%20ing/science%20des%20materiaux/RAPPORT-TRACTION.pdf
 
@@ -32,9 +32,9 @@ function [ E ] = Young( extension, Elastic_load, ech)
 % 
 % Surface = (A1+A2+A3);
 %On ne prend pas ceux là, mais les données introduite pour les tests.
-
-width = 0.01;
-height= 0.05*10^(-3);
+L       = 0.05;
+width   = 0.01;
+height  = 0.05*10^(-3);
 Surface = width*height;
 
 XElastic    = extension*10^(-3);    %(m)

@@ -20,9 +20,10 @@
 ```matlab
 [time, load, ext] = importexcel('Corner_8')    % Exemple
 ```
-- **TractionPlot.m** permet de tracer les courbes d'un échantillon choisi
+- **TractionPlot.m** permet de tracer les courbes d'un échantillon choisi, il permet aussi d'appliquer un filtre IIR d'ordre 1 pour lisser la courbe
 ```matlab
 TractionPlot('Line',5)    % Exemple
+TractionPlot('Line',5,1)  % Avec filtre
 ```
 - **Young.m** permet de calculer le module de Young avec un load et une extension donnés
 ```matlab

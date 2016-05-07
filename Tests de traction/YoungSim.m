@@ -50,7 +50,7 @@ display = [Traction.Line.YoungM ; Traction.Line.YoungSim];
     
 bar(display'/(10^9),'hist')
 xlim([0 11]);
-title('Comparaison Module de Young')
+title('Comparaison Module de Young -- Polyester')
 xlabel('N° échantillon');
 ylabel('Module de Young (GPa)');
 legend('Module de Young pratique', 'Module de Young théorique','Location','northwest')

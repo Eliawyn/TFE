@@ -47,16 +47,16 @@ for i=1:10
     %L'index des valeurs inférieur à 10s
     mintime = find(time<=10); 
     %Calcul de la pente moyenne
-    Traction.Line(i).Pente = time(mintime)\theload(mintime);
+    Traction.Line(i).Pente = ext(mintime)\theload(mintime);
     %Données de la droite moyenne
-    Traction.Line(i).Px   = time(mintime); 
+    Traction.Line(i).Px   = ext(mintime); 
     Traction.Line(i).Py   = Traction.Line(i).Px * Traction.Line(i).Pente;
     
     %Calcul du module de Young, point à 10 seconde
     point = find(Traction.Line(i).time <= 4);
     point = point(end);
-    Traction.Line(i).YoungM = Young(Traction.Line(i).ext(point),Traction.Line(i).load(point),i);
+    Traction.Line(i).YoungM = Young(Traction.Line(i).ext(point),Traction.Line(i).load(point));
 end
 
-clear i s time theload mintime point
+clear i s time theload mintime point ext
 save('VarTraction');

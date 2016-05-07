@@ -15,12 +15,13 @@ function TractionPlot(genre,num,~)
     
     eval(sprintf('time = Traction.%s(%d).time;',genre,num));
     eval(sprintf('theload = Traction.%s(%d).load;',genre,num));
+    eval(sprintf('ext = Traction.%s(%d).ext;',genre,num));
     
     %Si on ne spécifie pas de filtrage
     if nargin < 3 
         %Appel du plot
         figure
-        h = plot(time,theload);
+        h = plot(ext,theload);
         hold on
         eval(sprintf('plot(Traction.%s(%d).Px,Traction.%s(%d).Py, ''LineWidth'', 1.5);',genre,num,genre,num));
         
@@ -53,9 +54,10 @@ function TractionPlot(genre,num,~)
     set(h, 'LineWidth', 1.5);
     title(sprintf('Déformation de l''échantillon %s_%d suite à une traction longitudinale'...
                     ,genre,num),'Interpreter','none')
-    xlabel('Temps (s)')
-    ylabel('Load (N)')
-    %xlim([0 time(end)])
+    xlabel('Déformation relative (mm)')
+    ylabel('Charge (N)')
+    legend('Données essai de traction','Pente du domaine élastique','Location','Southwest','Orientation','horizontal')
+    %xlim([0 ext(end)+10])
     
     clear t K 
 % catch 
