@@ -55,7 +55,7 @@ I3 = (W_Cu.*power(H_Cu,3))./12;
 d3 = abs(H_PET + H_Epy + H_Cu/2 - H_Centre);
 
 %Mise en commun des moments d'inerties
-I  = (I1 + A1.*power(d1,2)) + (I2 + A2.*power(d2,2)) + (I3 + A3.*power(d3,2))  
+I  = (I1 + A1.*power(d1,2)) + (I2 + A2.*power(d2,2)) + (I3 + A3.*power(d3,2));  
 
 %% Calcul théorique de la flèche
 % Force appliquée
