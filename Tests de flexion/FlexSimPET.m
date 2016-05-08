@@ -76,9 +76,10 @@ display(2,:) = display(2,:)*10^4;
 bar(display','hist')
 
 xlim([0 11]);
-title('Comparaison de la flexibilité des échantillons')
+title('Comparaison de la flexibilité -- Polyester')
 xlabel('N° échantillon');
 ylabel('Pente (µm/mg)');
 legend('Pente des tests pratiques', 'Pente calculée théoriquement','Location','northeast')
+grid on
 
 clearvars -except Line Papier Res Via Traction Cote

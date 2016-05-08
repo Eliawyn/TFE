@@ -12,10 +12,10 @@ mgToN = 0.00000981;
 
 %Dimensions E=Module de Young, L=longueur, W=largeur, H=épaisseur
 %Polyester
-E_PI   = 4*10^9;   %Pa
+E_PI   = 2.5*10^9;   %Pa
 L_PI   = 0.04;     %m
 W_PI   = 0.01;     %m
-H_PI   = 0.00005;  %m
+H_PI   = 0.000025;  %m
 
 %Cuivre
 E_Cu    = 110*10^9;   %Pa
@@ -73,15 +73,16 @@ figure('name','Comparaison de la flexibilité des échantillons','NumberTitle','of
 display = [Line.Ver.Fleche ; Line.PI.Fleche];
 display = display*10^4;
 %*10^4 car 0.0015 [m/100mg] = 15[mµ/mg]
-b = bar(display','hist')
-b(1).FaceColor = 'blue'; 
-b(2).FaceColor = 'yellow'; 
+b = bar(display','hist');
+b(1).FaceColor = 'yellow'; 
+b(2).FaceColor = 'blue'; 
 
 xlim([0 11]);
 ylim([0 21]);
-title('Comparaison de la flexibilité des échantillons')
+title('Comparaison de la flexibilité -- Polyester et Polyimide')
 xlabel('N° échantillon');
 ylabel('Pente (µm/mg)');
 legend('Polyester', 'Polyimide','Location','northeast')
+grid on
 
 clearvars -except Line Papier Res Via Traction Cote

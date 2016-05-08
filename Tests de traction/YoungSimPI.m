@@ -40,7 +40,9 @@ end
 
 display = [Traction.Line.YoungSim ; Traction.PI.YoungSim];
     
-bar(display'/(10^9),'hist');
+b = bar(display'/(10^9),'hist');
+b(1).FaceColor = 'yellow'; 
+b(2).FaceColor = 'blue'; 
 xlim([0 11]);
 title('Comparaison Module de Young -- Polyester et Polyimide')
 xlabel('N° échantillon');
