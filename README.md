@@ -38,7 +38,7 @@ TractionPlot('Line',5,1)  % Avec filtre
 - **CreationVariableExcel** permet d'importer les données des fichiers excel dans VarTraction.mat
 - **AllLinePlot** et **AllCornerPlot** permet d'afficher tous les graphes des données
 - **LineYoungPlot** et **CornerYoungPlot** permet d'afficher les différents modules de Young
-- **YoungSim** permet de simuler et trouver théoriquement le module de Young sur les échantillons de lignes verticales. Celui-ci va aussi comparer avec les modules trouvés pratiquement
+- **YoungSimPET** et **YoungSimPI** permettent de simuler et trouver théoriquement le module de Young sur les échantillons de lignes verticales en polyester ou en polyimide. 
 - **TearStrength** permet de calculer et afficher les résistances aux fissures des différents échantillons en coin, et comparer les différents systèmes de sécurité de circuits
 
 ## Tests de flexion
@@ -67,6 +67,7 @@ end
 - **LineSim** permet de faire une simulation des flèches de chaque échantillon
 - **CoteRes** permet de comparer l'effet du sens du pliage en interne ou externe
 - **PETvsIP** permet de comparer la flexibilité entre le polyester et le polyimide
+- **PlotOne** sert à afficher les données de flexion
 - **YoungComp** est inutile ici, juste pour information personnelle
 > Les graphes présentent les données, le moyennage de celles-ci et le résultat. Les autres fichiers *.m* sont à titre personnel d'information et ne sont pas utiles ici.
 
