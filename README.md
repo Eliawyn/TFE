@@ -64,7 +64,7 @@ end
 - **Variables** transformation des **VarBrut** en **VarGood**
 - **plotting** permet de mettre en graphe toutes les données
 - **main** permet de faire les deux à la suite
-- **LineSim** permet de faire une simulation des flèches de chaque échantillon
+- **FlexSimPET** et **FlexSimPI** permettent de faire une simulation des flèches de chaque échantillon
 - **CoteRes** permet de comparer l'effet du sens du pliage en interne ou externe
 - **PETvsIP** permet de comparer la flexibilité entre le polyester et le polyimide
 - **PlotOne** sert à afficher les données de flexion

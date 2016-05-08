@@ -1,4 +1,4 @@
-%% Calcul théorique de la flèche sur un film en flexion sur deux appuis
+%% Calcul théorique de la flèche sur un film en polyester en flexion sur deux appuis
 %
 %            1     F*L^3
 % f_max =  ---- * -------

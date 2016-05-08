@@ -1,6 +1,6 @@
 %% Simulation du module de young
 %Couche de cuivre sur une couche de polyimide en traction
-
+%http://www.dupont.com/content/dam/dupont/products-and-services/membranes-and-films/polyimde-films/documents/DEC-Kapton-summary-of-properties.pdf
 %Polyester
 E_PI   = 2.5*10^9;   %Pa
 L_PI   = 30;       %mm
@@ -40,7 +40,7 @@ end
 
 display = [Traction.Line.YoungSim ; Traction.PI.YoungSim];
     
-bar(display'/(10^9),'hist')
+bar(display'/(10^9),'hist');
 xlim([0 11]);
 title('Comparaison Module de Young -- Polyester et Polyimide')
 xlabel('N° échantillon');
