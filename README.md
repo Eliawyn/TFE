@@ -70,6 +70,7 @@ end
 - **PlotOne** sert à afficher les données de flexion
 - **Encapsulation** permet de simuler la flexibilité pour l'ajout d'une encapsulation en silicone
 - **YoungComp** et **PlotPente** sont inutiles, juste pour information personnelle
+
 > Les graphes présentent les données, le moyennage de celles-ci et le résultat. Les autres fichiers *.m* sont à titre personnel d'information et ne sont pas utiles ici.
 
 ## Tests d'élasticité
