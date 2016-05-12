@@ -50,10 +50,10 @@ display(1,6) = Res.Ver(6).Pente;
 display(1,7) = Res.Ver(8).Pente;
 display(1,8) = Res.Ver(10).Pente;
 
-figure('name','Influence du sens de pliage sur la flexibilité','NumberTitle','off')
+figure('name','Influence du côté de pliage sur la flexibilité','NumberTitle','off')
 
 bar(display','hist')
-title('Influence du sens de pliage sur la flexibilité')
+title('Influence du côté de pliage sur la flexibilité')
 xlabel('N° échantillon');
 ylabel('Pente (µm/mg)');
 legend('Flexibilité pliage composant en interne', 'Flexibilité pliage composant en externe','Location','northeast')

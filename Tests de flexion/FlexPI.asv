@@ -1,16 +1,18 @@
 %% Comparaison polyester -- polyimide
 
-display = [ Line.Ver.Pente ; NaN Line.PI.Pente];
+display = [ Line.PI.Fleche ; NaN Line.PI.Pente];
+display(1,:) = display(1,:)*10^4;
 %Sans le premier vu qu'il n'existe pas en polyimide
 
-figure('name','Comparaison flexibilité polyester -- polyimide','NumberTitle','off')
+figure('name','Comparaison flexibilité -- polyimide','NumberTitle','off')
 
 bar(display','hist')
 title('Comparaison flexibilité polyester -- polyimide')
 xlabel('N° échantillon');
 ylabel('Pente (µm/mg)');
-legend('Polyester', 'Polyimide','Location','northeast')
+legend('', 'Pente des tests pratiquesPente calculée théoriquement','Location','northeast')
 xlim([ 0.5 10.5 ]);
+ylim([0 21]);
 %C'est le numéro de l'échantillon ... car par le premier !
 
 clearvars -except Line Papier Res Via Traction Cote

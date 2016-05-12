@@ -1,54 +1,54 @@
-# Travail de fin d'Ã©tudes
+# Travail de fin d'études
 > Maxime Bosquet - 17 mai 2016
 
-- Au prÃ©alable, faire un *click droit* sur le dossier **TFE** dans MATLAB et *Add to path - Selected folder and subfolders*
-- Concentration des calculs et outils utilisÃ©s pour le TFE
-- Tous les fichiers MATLAB sont prÃ©sents
+- Au préalable, faire un *click droit* sur le dossier **TFE** dans MATLAB et *Add to path - Selected folder and subfolders*
+- Concentration des calculs et outils utilisés pour le TFE
+- Tous les fichiers MATLAB sont présents
 
 ## Tests de traction
 #### Variables
-- **VarTraction.mat** comprend toutes les donnÃ©es concernant les tests de traction
-- Les donnÃ©es sont prÃ©sentÃ©es de la mÃªme maniÃ¨re que pour les tests de flexion
+- **VarTraction.mat** comprend toutes les données concernant les tests de traction
+- Les données sont présentées de la mÃªme manière que pour les tests de flexion
 
 #### Fichiers
-- Dossier **Fichiers source** prÃ©sente les fichiers texte comprenant les donnÃ©es rÃ©cupÃ©rÃ©es de la machine
-- **Fichiers excel** sont les fichiers texte importÃ©s dans Excel
-- **VarTraction.mat** est tirÃ© des fichiers excel
+- Dossier **Fichiers source** présente les fichiers texte comprenant les données récupérées de la machine
+- **Fichiers excel** sont les fichiers texte importés dans Excel
+- **VarTraction.mat** est tiré des fichiers excel
 
 #### Fonctions
 - **importexcel.m** permet d'importer un fichier excel
 ```matlab
 [time, load, ext] = importexcel('Corner_8')    % Exemple
 ```
-- **TractionPlot.m** permet de tracer les courbes d'un Ã©chantillon choisi, il permet aussi d'appliquer un filtre IIR d'ordre 1 pour lisser la courbe
+- **TractionPlot.m** permet de tracer les courbes d'un échantillon choisi, il permet aussi d'appliquer un filtre IIR d'ordre 1 pour lisser la courbe
 ```matlab
 TractionPlot('Line',5)    % Exemple
 TractionPlot('Line',5,1)  % Avec filtre
 ```
-- **Young.m** permet de calculer le module de Young avec un load et une extension donnÃ©s
+- **Young.m** permet de calculer le module de Young avec un load et une extension donnés
 ```matlab
 [E] = Young(0.3645, 50.1562)    % Exemple
 ```
-- **shadeplot** permet de crÃ©er une zone de couleur dans un plot
+- **shadeplot** permet de créer une zone de couleur dans un plot
 ```matlab
 [A,B,C] = shadedplot([0 11], [9 9], [13 13], [1 0.7 0.7], 'r');
 ```
 
 #### Scripts
-- **CreationVariableExcel** permet d'importer les donnÃ©es des fichiers excel dans VarTraction.mat
-- **AllLinePlot** et **AllCornerPlot** permet d'afficher tous les graphes des donnÃ©es
-- **LineYoungPlot** et **CornerYoungPlot** permet d'afficher les diffÃ©rents modules de Young
-- **YoungSimPET** et **YoungSimPI** permettent de simuler et trouver thÃ©oriquement le module de Young sur les Ã©chantillons de lignes verticales en polyester ou en polyimide. 
-- **TearStrength** permet de calculer et afficher les rÃ©sistances aux fissures des diffÃ©rents Ã©chantillons en coin, et comparer les diffÃ©rents systÃ¨mes de sÃ©curitÃ© de circuits
+- **CreationVariableExcel** permet d'importer les données des fichiers excel dans VarTraction.mat
+- **AllLinePlot** et **AllCornerPlot** permet d'afficher tous les graphes des données
+- **LineYoungPlot** et **CornerYoungPlot** permet d'afficher les différents modules de Young
+- **YoungSimPET** et **YoungSimPI** permettent de simuler et trouver théoriquement le module de Young sur les échantillons de lignes verticales en polyester ou en polyimide. 
+- **TearStrength** permet de calculer et afficher les résistances aux fissures des différents échantillons en coin, et comparer les différents systèmes de sécurité de circuits
 
 ## Tests de flexion
 #### Variables
-- **VarBrut.mat** reprend les donnÃ©es basiques rÃ©cupÃ©rÃ©es du test
-- **VarGood.mat** reprend les donnÃ©es Ã©ditÃ©es pour une meilleure comprÃ©hension
+- **VarBrut.mat** reprend les données basiques récupérées du test
+- **VarGood.mat** reprend les données éditées pour une meilleure compréhension
 
-> Chaque structure est reprÃ©sentÃ©e par un poids (X), une flÃ¨che (Y) et un commentaire. 
+> Chaque structure est représentée par un poids (X), une flèche (Y) et un commentaire. 
 
-DiffÃ©rentes maniÃ¨res d'appeler une variable :
+Différentes manières d'appeler une variable :
 ```matlab
 Line.Ver(1)      % Retourne les informations de Line.Ver
 ```
@@ -56,23 +56,24 @@ Line.Ver(1)      % Retourne les informations de Line.Ver
 for i = 1:10
     figure
     plot(Res.Ver(i).X, Res.Ver(i).Y)
-    % Graphe de tous les Ã©chantillons de rÃ©sistances verticales
+    % Graphe de tous les échantillons de résistances verticales
 end
 ```
 
 #### Scripts
 - **Variables** transformation des **VarBrut** en **VarGood**
-- **plotting** permet de mettre en graphe toutes les donnÃ©es
-- **main** permet de faire les deux Ã  la suite
-- **FlexSimPET** et **FlexSimPI** permettent de faire une simulation des flÃ¨ches de chaque Ã©chantillon
+- **plotting** permet de mettre en graphe toutes les données
+- **main** permet de faire les deux à la suite
+- **FlexSimPET** et **FlexSimPI** permettent de faire une simulation des flèches de chaque échantillon
 - **CoteRes** permet de comparer l'effet du sens du pliage en interne ou externe
-- **PETvsIP** permet de comparer la flexibilitÃ© entre le polyester et le polyimide
-- **PlotOne** sert Ã  afficher les donnÃ©es de flexion
-- **YoungComp** est inutile ici, juste pour information personnelle
-> Les graphes prÃ©sentent les donnÃ©es, le moyennage de celles-ci et le rÃ©sultat. Les autres fichiers *.m* sont Ã  titre personnel d'information et ne sont pas utiles ici.
+- **FlexPI** permet de comparer la flexibilité du polyimide
+- **PlotOne** sert à afficher les données de flexion
+- **Encapsulation** permet de simuler la flexibilité pour l'ajout d'une encapsulation en silicone
+- **YoungComp** et **PlotPente** sont inutiles, juste pour information personnelle
+> Les graphes présentent les données, le moyennage de celles-ci et le résultat. Les autres fichiers *.m* sont à titre personnel d'information et ne sont pas utiles ici.
 
-## Tests d'Ã©lasticitÃ©
-Non terminÃ©.
+## Tests d'élasticité
+Non terminé.
 
 ## Contributeur
 Maxime Bosquet

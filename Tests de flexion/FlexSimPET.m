@@ -40,7 +40,7 @@ y2 = H_PET + H_Epy/2;
 A3 = W_Cu.*H_Cu;
 y3 = H_PET + H_Epy + H_Cu/2;
 
-H_Centre = (A1*y1 + A2*y2 + A3*y3)./(A1 + A2 + A3);
+H_Centre = (A1*y1 + A2*y2 + A3*y3)./(A1 + A2 + A3)
 
 %% Calcul du moment d'inertie
 %http://bendingmomentdiagram.com/fr/tutorials/calculating-beam-section-moment-of-inertia/
@@ -55,7 +55,7 @@ I3 = (W_Cu.*power(H_Cu,3))./12;
 d3 = abs(H_PET + H_Epy + H_Cu/2 - H_Centre);
 
 %Mise en commun des moments d'inerties
-I  = (I1 + A1.*power(d1,2)) + (I2 + A2.*power(d2,2)) + (I3 + A3.*power(d3,2));  
+I  = (I1 + A1.*power(d1,2)) + (I2 + A2.*power(d2,2)) + (I3 + A3.*power(d3,2))
 
 %% Calcul théorique de la flèche
 % Force appliquée
