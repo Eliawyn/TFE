@@ -32,5 +32,5 @@ hold off
 xlim([0.5 10.5]);
 title('Comparaison de la résistance des échantillons en coins')
 %xlabel('N° échantillon');
-ylabel('Résistance aux fissures (kN/m)');
+ylabel('Résistance aux fissures (N/mm)');
 grid on
